@@ -1,11 +1,14 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <link href= "{{ url_for('static',filename='css/main.css') }}" rel="stylesheet" type= "text/css" ></link>
-    <title>matricks!</title>
+    <meta charset ="utf-8"/>
+    <meta name ="viewport" content = "width=device-width, initial-scale=1"/>
+    <link href= "{{ url_for('static',filename='main.css') }}" rel="stylesheet" type= "text/css" ></link>
+    <title>{% block title%}matricks!{%endblock%}</title>
   </head>
   <body>
     <nav class="top-bar">
-      <a href="#"><h1>matricks!</h1></a>
+      <a href="#"><h1>[matricks!]</h1></a>
 
       <ul class="nav-bar">
         <li><a href="#">About Us</a></li>
@@ -14,7 +17,8 @@
         </li>
       </ul>
     </nav>
-    <ul>
+    <div class = "operations">
+      <ul class = "op">
       <button>
         Addition
       </button>
@@ -30,6 +34,25 @@
       <button>
         Inverse
       </button>
-    </ul>
+      </ul>
+    </div>
+    <form action="/">
+      <label for="cars">Matrix Dimension: </label>
+        <select name="dim">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        x
+        <select name="dim">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        <br><br>
+      <input type="submit" value="Let's Do A Trick!">
+    </form>
   </body>
 </html>

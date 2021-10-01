@@ -1,3 +1,10 @@
 from flask import Flask
 
-app = Flask(__name__,static_url_path="/app/templates/static")
+def create_app():
+    app = Flask(__name__)
+    app.config['SECRET_KEY'] = 'admin'
+
+    from .views import views
+
+    app.register_blueprint(views, url_prefix='/')
+    return app
