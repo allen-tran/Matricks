@@ -3,7 +3,7 @@
   <head>
     <meta charset ="utf-8"/>
     <meta name ="viewport" content = "width=device-width, initial-scale=1"/>
-    <link href= "{{ url_for('static',filename='main.css') }}" rel="stylesheet" type= "text/css" ></link>
+    <link href= "{{ url_for('static',filename='css/main.css') }}" rel="stylesheet" type= "text/css" ></link>
     <title>{% block title%}matricks!{%endblock%}</title>
   </head>
   <body>
@@ -11,33 +11,33 @@
       <a href="#"><h1>[matricks!]</h1></a>
 
       <ul class="nav-bar">
-        <li><a href="#">About Us</a></li>
+        <li><a href="#">about Us</a></li>
         <li>
-          <a href="#">Account</a>
+          <a href="#">account</a>
         </li>
       </ul>
     </nav>
     <div class = "operations">
       <ul class = "op">
-      <button>
-        Addition
+      <button id = "add">
+        addition
       </button>
       <button>
-        Subtraction
+        subtraction
       </button>
       <button>
-        Multiplication
+        multiplication
       </button>
       <button>
-        Determinant
+        determinant
       </button>
       <button>
-        Inverse
+        inverse
       </button>
       </ul>
     </div>
     <form action="/">
-      <label for="cars">Matrix Dimension: </label>
+      <label for="cars">matrix dimension: </label>
         <select name="dim">
           <option value="1">1</option>
           <option value="2">2</option>
@@ -52,7 +52,7 @@
           <option value="4">4</option>
         </select>
         <br><br>
-      <input type="submit" value="Let's Do A Trick!">
+      <input type="submit" value="let's do a trick!">
     </form>
   </body>
 </html>

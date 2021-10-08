@@ -12,6 +12,7 @@ body {
   z-index: 2;
   animation-name: fade;
   animation-duration: 2s;
+  color: white;
 }
 .top-bar {
   justify-content: space-between;
@@ -122,4 +123,32 @@ button:hover {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
+}
+
+form {
+  justify-content: center;
+  /* display: flex; */
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+option {
+  display: flex;
+  justify-content: center;
+}
+
+#add {
+  background-color: #a8dadc;
+  color: #1d3557;
+}
+input {
+  border-radius: 1rem;
+  border: none;
+  background-color: #1d3557;
+  color: #f1faee;
+  border: 2px solid #1d3557;
+}
+input:hover {
+  background-color: #a8dadc;
+  color: #1d3557;
 }
