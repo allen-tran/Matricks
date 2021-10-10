@@ -10,8 +10,6 @@
   </head>
   <body>
     <div class ="navbar">
-      {% block title %}{% endblock %}
-
       
        <nav class="top-bar">
       <a href="#"><h1>[matricks!]</h1></a>
@@ -59,6 +57,7 @@
       </a>
       </ul>
     </div>
+  {%block action%}
     <form action="/add", method="POST">
       <div>
       <label form="mat1">first matrix dimension:&nbsp</label>
@@ -94,15 +93,12 @@
         </select>
         </div>
         <br>
-      <input type="submit" value="let's do a trick!">
+      <input type="submit" value="continue">
     </form>
-    <div class = "resultSum">
-      {{sum}}
-    </div>
-    <div id="footer">
-      {% block footer %}
-     
-      {% endblock %}
+    
+   {%endblock%}
+   <div class = "resultSum">
+      {{res}}
     </div>
   </body>
 </html>

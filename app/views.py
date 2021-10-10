@@ -1,6 +1,7 @@
 from re import L
 from flask import Blueprint, render_template, request
 import numpy as np
+from numpy.linalg import inv, det
 
 views = Blueprint('views', __name__)
 
@@ -51,7 +52,33 @@ def add():
         for j in range(len(b[i])):
             x = int(input("Enter element: "))
             b[i][j] = x
-    return render_template("addtion.html", sum = np.add(a, b))
+    return render_template("addtion.html", res = np.add(a, b))
+
+
+@views.route("/sub",methods = ['POST'])
+def sub():
+    m = int(request.form['dim'])
+    n = int(request.form['dim2'])
+
+    a = np.zeros((m, n), dtype=int)
+    u = len(a)
+
+    for i in range(u):
+        for j in range(len(a[i])):
+            x = int(input("Enter element: "))
+            a[i][j] = x
+        
+    j = int(request.form['dim3'])
+    k = int(request.form['dim4'])
+        
+    b = np.zeros((j, k), dtype=int)
+    v = len(b)
+
+    for i in range(v):
+        for j in range(len(b[i])):
+            x = int(input("Enter element: "))
+            b[i][j] = x
+    return render_template("subtraction.html", res = np.subtract(a, b))
 
 @views.route('/mult', methods=["POST"])
 def mult():
@@ -76,5 +103,33 @@ def mult():
         for j in range(len(b[i])):
             x = int(input("Enter element: "))
             b[i][j] = x
-    return render_template("base.html", sum = np.add(a, b))
+    return render_template("multiplication.html", res = np.matmul(a, b))
+
+@views.route('/det', methods=["POST"])
+def deter():
+    m = int(request.form['dim'])
+    n = int(request.form['dim2'])
+
+    a = np.zeros((m, n), dtype=int)
+    u = len(a)
+
+    for i in range(u):
+        for j in range(len(a[i])):
+            x = int(input("Enter element: "))
+            a[i][j] = x
+    return render_template("determinant.html", res = int(det(a)))
+
+@views.route('/inv', methods=["POST"])
+def inver():
+    m = int(request.form['dim'])
+    n = int(request.form['dim2'])
+
+    a = np.zeros((m, n), dtype=int)
+    u = len(a)
+
+    for i in range(u):
+        for j in range(len(a[i])):
+            x = int(input("Enter element: "))
+            a[i][j] = x
+    return render_template("inverse.html", res = inv(a))
     

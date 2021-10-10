@@ -7,26 +7,48 @@
     <meta charset ="utf-8"/>
     <meta name ="viewport" content = "width=device-width, initial-scale=1"/>
     <link href= "{{ url_for('static',filename='css/multiplication.css') }}" rel="stylesheet" type= "text/css" ></link>
-    <title>{block title}</title>
     {%endblock%}
 
   </head>
   <body>
-    <nav class="top-bar">
-      <a href="#"><h1>"[matricks!]"</h1></a>
-      <ul class="nav-bar">
-        <li><a href="#">About Us</a></li>
-        <li>
-          <a href="#">Account</a>
-        </li>
-      </ul>
-    </nav>
-    <ul>
-      <button>Addition</button>
-      <button>Subtraction</button>
-      <button>Multiplication</button>
-      <button>Determinant</button>
-      <button>Inverse</button>
-    </ul>
+    {%block action%}
+      <form action="/mult", method="POST">
+      <div>
+      <label form="mat1">first matrix dimension:&nbsp</label>
+        <select name="dim">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        &nbspx&nbsp
+        <select name="dim2">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+        <br>
+        <div>
+      <label form="mat2">&nbspsecond matrix dimension:&nbsp</label>
+        <select name="dim3">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        &nbspx&nbsp
+        <select name="dim4">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        </div>
+        <br>
+      <input type="submit" value="continue">
+    </form>
+    {%endblock%}
   </body>
 </html>
