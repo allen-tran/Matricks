@@ -3,21 +3,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+    {%block head%}
     <meta charset ="utf-8"/>
     <meta name ="viewport" content = "width=device-width, initial-scale=1"/>
-    <link href= "{{ url_for('static',filename='main.css') }}" rel="stylesheet" type= "text/css" ></link>
+    <link href= "{{ url_for('static',filename='css/addition.css') }}" rel="stylesheet" type= "text/css" ></link>
     <title>{block title}</title>
+    {%endblock%}
   </head>
   <body>
-    <nav class="top-bar">
-      <a href="#"><h1>"[matricks!]"</h1></a>
-      <ul class="nav-bar">
-        <li><a href="#">About Us</a></li>
-        <li>
-          <a href="#">Account</a>
-        </li>
-      </ul>
-    </nav>
+          {% block title %}{% endblock %}
+
     <ul>
       <button>Addition</button>
       <button>Subtraction</button>

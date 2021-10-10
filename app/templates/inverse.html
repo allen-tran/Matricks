@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+      {%block head%}
+    <meta charset ="utf-8"/>
+    <meta name ="viewport" content = "width=device-width, initial-scale=1"/>
+    <link href= "{{ url_for('static',filename='css/inverse.css') }}" rel="stylesheet" type= "text/css" ></link>
+    {%endblock%}
+  </head>
+  <body>
+    <nav class="top-bar">
+      <a href="#"><h1>"[matricks!]"</h1></a>
+      <ul class="nav-bar">
+        <li><a href="#">About Us</a></li>
+        <li>
+          <a href="#">Account</a>
+        </li>
+      </ul>
+    </nav>
+    <ul>
+      <button>Addition</button>
+      <button>Subtraction</button>
+      <button>Multiplication</button>
+      <button>Determinant</button>
+      <button>Inverse</button>
+    </ul>
+  </body>
+</html>

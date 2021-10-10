@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+    {%block head%}
     <meta charset ="utf-8"/>
     <meta name ="viewport" content = "width=device-width, initial-scale=1"/>
     <link href= "{{ url_for('static',filename='css/main.css') }}" rel="stylesheet" type= "text/css" ></link>
-    <title>{% block title%}matricks!{%endblock%}</title>
+    <title>matricks!</title>
+    {%endblock%}
   </head>
   <body>
-    <nav class="top-bar">
+    <div class ="navbar">
+      {% block title %}{% endblock %}
+
+      
+       <nav class="top-bar">
       <a href="#"><h1>[matricks!]</h1></a>
 
       <ul class="nav-bar">
@@ -17,23 +23,40 @@
         </li>
       </ul>
     </nav>
+    </div>
+   
     <div class = "operations">
       <ul class = "op">
-      <button id = "add">
+      <a href = "addition">
+         <button id = "add">
         addition
       </button>
-      <button>
+      </a>
+     
+      <a href = "subtraction">
+      <button id = "sub">
         subtraction
       </button>
-      <button>
+      </a>
+      
+      
+      <a href = "multiplication">
+      <button id = "mult">
         multiplication
       </button>
-      <button>
+      </a>
+
+      <a href = "determinant">
+        <button id = "det">
         determinant
       </button>
-      <button>
+      </a>
+      
+      <a href = "inverse">
+      <button id = "inverse">
         inverse
       </button>
+      </a>
       </ul>
     </div>
     <form action="/add", method="POST">
@@ -75,6 +98,11 @@
     </form>
     <div class = "resultSum">
       {{sum}}
+    </div>
+    <div id="footer">
+      {% block footer %}
+     
+      {% endblock %}
     </div>
   </body>
 </html>
