@@ -36,23 +36,45 @@
       </button>
       </ul>
     </div>
-    <form action="/">
-      <label for="cars">matrix dimension: </label>
+    <form action="/add", method="POST">
+      <div>
+      <label form="mat1">first matrix dimension:&nbsp</label>
         <select name="dim">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
         </select>
-        x
-        <select name="dim">
+        &nbspx&nbsp
+        <select name="dim2">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
         </select>
-        <br><br>
+      </div>
+        <br>
+        <div>
+      <label form="mat2">&nbspsecond matrix dimension:&nbsp</label>
+        <select name="dim3">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        &nbspx&nbsp
+        <select name="dim4">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        </div>
+        <br>
       <input type="submit" value="let's do a trick!">
     </form>
+    <div class = "resultSum">
+      {{sum}}
+    </div>
   </body>
 </html>

@@ -1,5 +1,6 @@
 from re import L
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
+import numpy as np
 
 views = Blueprint('views', __name__)
 
@@ -11,7 +12,56 @@ def home():
 def addition():
     return render_template("addition.html")
 
-@views.route('/multiplication')
+@views.route("/add",methods = ['POST'])
+def add():
+    m = int(request.form['dim'])
+    n = int(request.form['dim2'])
+
+    a = np.zeros((m, n), dtype=int)
+    u = len(a)
+
+    for i in range(u):
+        for j in range(len(a[i])):
+            x = int(input("Enter element: "))
+            a[i][j] = x
+        
+    j = int(request.form['dim3'])
+    k = int(request.form['dim4'])
+        
+    b = np.zeros((j, k), dtype=int)
+    v = len(b)
+
+    for i in range(v):
+        for j in range(len(b[i])):
+            x = int(input("Enter element: "))
+            b[i][j] = x
+    return render_template("base.html", sum = np.add(a, b))
+
+@views.route('/multiplication', methods="POST")
+def mult():
+    m = int(request.form['dim'])
+    n = int(request.form['dim2'])
+
+    a = np.zeros((m, n), dtype=int)
+    u = len(a)
+
+    for i in range(u):
+        for j in range(len(a[i])):
+            x = int(input("Enter element: "))
+            a[i][j] = x
+        
+    j = int(request.form['dim3'])
+    k = int(request.form['dim4'])
+        
+    b = np.zeros((j, k), dtype=int)
+    v = len(b)
+
+    for i in range(v):
+        for j in range(len(b[i])):
+            x = int(input("Enter element: "))
+            b[i][j] = x
+    return render_template("base.html", sum = np.add(a, b))
+
 def multiplication():
     return render_template("multiplication.html")
     
