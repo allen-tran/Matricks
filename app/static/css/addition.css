@@ -151,3 +151,68 @@ input:hover {
   background-color: #a8dadc;
   color: #1d3557;
 }
+
+#dim,
+#dim2,
+#dim3,
+#dim4 {
+  max-width: 30px;
+  background: #f1faee;
+  border: none;
+  color: #1d3557;
+  border-radius: 0px;
+}
+
+.con {
+  padding: 5px;
+}
+
+/* .matrix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* div#myDynamicTable {
+  position: relative;
+}
+div#myDynamicTable::before,
+div#myDynamicTable::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  border: 1px solid #000;
+  width: 6px;
+  height: 100%;
+}
+div#myDynamicTable::before {
+  left: -6px;
+  border-right: 0;
+}
+div#myDynamicTable::after {
+  right: -6px;
+  border-left: 0;
+} */
+
+div#myDynamicTable {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+table {
+  border-collapse: collapse;
+  border-color: #f1faee;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input {
+  text-align: center;
+}
+.trick {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}

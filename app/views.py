@@ -39,7 +39,7 @@ def add():
 
     for i in range(u):
         for j in range(len(a[i])):
-            x = int(input("Enter element: "))
+            x = int(request.form['{i},{j}'.format(i=i, j=j)])
             a[i][j] = x
         
     j = int(request.form['dim3'])
@@ -50,9 +50,9 @@ def add():
 
     for i in range(v):
         for j in range(len(b[i])):
-            x = int(input("Enter element: "))
+            x = int(request.form['{i},{j}'.format(i=i, j=j)])
             b[i][j] = x
-    return render_template("addtion.html", res = np.add(a, b))
+    return render_template("addition.html", res = np.add(a, b))
 
 
 @views.route("/sub",methods = ['POST'])

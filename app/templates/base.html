@@ -59,46 +59,117 @@
     </div>
   {%block action%}
     <form action="/add", method="POST">
-      <div>
-      <label form="mat1">first matrix dimension:&nbsp</label>
-        <select name="dim">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
+      <div class = "firstform">
+      <label for="mat1">first matrix dimension:&nbsp</label>
+      
+        <input type="number" id="dim" name="dim" required
+       minlength="1" min = "1" maxlength="3" placeholder = "0">
         &nbspx&nbsp
-        <select name="dim2">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
+         <input type="number" id="dim2" name="dim2" required
+       minlength="1" min = "1" maxlength="3" placeholder = "0">
       </div>
         <br>
-        <div>
-      <label form="mat2">&nbspsecond matrix dimension:&nbsp</label>
-        <select name="dim3">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
+        <div class = "secondform">
+      <label for="mat2">&nbspsecond matrix dimension:&nbsp</label>
+        <input type="number" id="dim3" name="dim3" required
+       minlength="1" min = "1" maxlength="3" size="1" placeholder = "0">
         &nbspx&nbsp
-        <select name="dim4">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
+         <input type="number" id="dim4" name="dim4" required
+       minlength="1" min = "1" maxlength="3" size="1" placeholder = "0">
         </div>
         <br>
-      <input type="submit" value="continue">
+        &nbsp
+      <button class = "con" onclick="Javascript:addTable(document.getElementById('dim').value,document.getElementById('dim2').value); Javascript:addTable(document.getElementById('dim3').value,document.getElementById('dim4').value);">
+            continue
+        </button>
+        <div id="myDynamicTable">
+
+      </div>
+      <div id = "letsdoatrick">
+        <input type="submit" class = "trick" value="let's do a trick!" >
+      </div>
     </form>
-    
    {%endblock%}
-   <div class = "resultSum">
+
+
+   <div class = "matrix">
       {{res}}
     </div>
   </body>
 </html>
+
+<script>
+function hide() {
+  var x = document.getElementById("letsdoatrick");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function addRow() {
+          
+    var myName = document.getElementById("name");
+    var age = document.getElementById("age");
+    var table = document.getElementById("myTableData");
+ 
+    var rowCount = table.rows.length;
+    var row = table.insertRow(rowCount);
+ 
+    row.insertCell(0).innerHTML= '<input type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
+    row.insertCell(1).innerHTML= myName.value;
+    row.insertCell(2).innerHTML= age.value;
+ 
+}
+
+function deleteRow(obj) {
+      
+    var index = obj.parentNode.parentNode.rowIndex;
+    var table = document.getElementById("myTableData");
+    table.deleteRow(index);
+    
+}
+function deleteTable(obj){
+  var index = obj.parentNode.parentNode.rowIndex;
+  var table = document.getElementById("myDynamicTable");
+  table.deleteTable(index);
+}
+function addTable(param1, param2) {
+      
+    var myTableDiv = document.getElementById("myDynamicTable");
+      
+    var table = document.createElement('TABLE');
+    table.border='1';
+    // var input = document.createElement("input");
+    var tableBody = document.createElement('TBODY');
+    table.appendChild(tableBody);
+      
+    for (var i=0; i<param1; i++){
+       var tr = document.createElement('TR');
+       tableBody.appendChild(tr);
+       
+       for (var j=0; j<param2; j++){
+           var td = document.createElement('TD');
+           td.width='10';
+           var input = document.createElement("input")
+           td.appendChild(input);
+           input.setAttribute('type', 'number');
+           input.setAttribute('id', `${i},${j}`);
+           input.style.width = "35px";
+           input.style.height = "35px";
+           input.style.borderRadius = "0";
+           tr.appendChild(td);
+           document.createTextNode("matrix 1")
+       }
+    }
+    myTableDiv.appendChild(table);
+    
+}
+ 
+function load() {
+    
+    console.log("Page load finished");
+ 
+}
+</script>

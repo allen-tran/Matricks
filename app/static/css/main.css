@@ -130,11 +130,6 @@ form {
   display: flex;
   align-items: center;
 }
-option {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 #add {
   background-color: #a8dadc;
@@ -146,8 +141,17 @@ input {
   background-color: #1d3557;
   color: #f1faee;
   border: 2px solid #1d3557;
+  width: 2rem;
 }
 input:hover {
   background-color: #a8dadc;
   color: #1d3557;
+}
+
+#dim {
+  max-width: 25px;
+}
+
+#dim2 {
+  max-width: 25px;
 }
