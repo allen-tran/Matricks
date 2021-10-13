@@ -58,9 +58,13 @@
       </ul>
     </div>
   {%block action%}
+
+        <button class = "con" onclick="Javascript:addTable1(document.getElementById('dim').value,document.getElementById('dim2').value); Javascript:addTable2(document.getElementById('dim3').value,document.getElementById('dim4').value);">
+            set matrices
+      </button>
     <form action="/add", method="POST">
-      <div class = "firstform">
-      <label for="mat1">first matrix dimension:&nbsp</label>
+         <div class = "firstform">
+      <label for="mat1">first matricks dimension:&nbsp</label>
       
         <input type="number" id="dim" name="dim" required
        minlength="1" min = "1" maxlength="3" placeholder = "0">
@@ -70,7 +74,7 @@
       </div>
         <br>
         <div class = "secondform">
-      <label for="mat2">&nbspsecond matrix dimension:&nbsp</label>
+      <label for="mat2">&nbspsecond matricks dimension:&nbsp</label>
         <input type="number" id="dim3" name="dim3" required
        minlength="1" min = "1" maxlength="3" size="1" placeholder = "0">
         &nbspx&nbsp
@@ -79,23 +83,22 @@
         </div>
         <br>
         &nbsp
-      <button class = "con" onclick="Javascript:addTable(document.getElementById('dim').value,document.getElementById('dim2').value); Javascript:addTable(document.getElementById('dim3').value,document.getElementById('dim4').value);">
-            continue
-        </button>
-        <div id="myDynamicTable">
+      <div id="myDynamicTable">
 
-      </div>
+     
+        </div>
       <div id = "letsdoatrick">
         <input type="submit" class = "trick" value="let's do a trick!" >
       </div>
     </form>
    {%endblock%}
 
-
+    {%if res%}
    <div class = "matrix">
-      {{res}}
+      <p>resultant matricks: </p>{{res}}
     </div>
   </body>
+  {%endif%}
 </html>
 
 <script>
@@ -135,8 +138,8 @@ function deleteTable(obj){
   var table = document.getElementById("myDynamicTable");
   table.deleteTable(index);
 }
-function addTable(param1, param2) {
-      
+function addTable1(param1, param2) {
+    document.getElementById("myDynamicTable").innerHTML = "\nmatricks 1: ";
     var myTableDiv = document.getElementById("myDynamicTable");
       
     var table = document.createElement('TABLE');
@@ -155,18 +158,47 @@ function addTable(param1, param2) {
            var input = document.createElement("input")
            td.appendChild(input);
            input.setAttribute('type', 'number');
-           input.setAttribute('id', `${i},${j}`);
+           input.setAttribute('id', `1,${i},${j}`);
            input.style.width = "35px";
            input.style.height = "35px";
            input.style.borderRadius = "0";
            tr.appendChild(td);
-           document.createTextNode("matrix 1")
+       }
+    }
+    console.log(tr.getAttribute)
+    
+    myTableDiv.appendChild(table);
+}
+ 
+ function addTable2(param1, param2) {
+
+    var myTableDiv = document.getElementById("myDynamicTable");
+      
+    var table = document.createElement('TABLE');
+    table.border='1';
+    // var input = document.createElement("input");
+    var tableBody = document.createElement('TBODY');
+    table.appendChild(tableBody);
+      
+    for (var i=0; i<param1; i++){
+       var tr = document.createElement('TR');
+       tableBody.appendChild(tr);
+       
+       for (var j=0; j<param2; j++){
+           var td = document.createElement('TD');
+           td.width='10';
+           var input = document.createElement("input")
+           td.appendChild(input);
+           input.setAttribute('type', 'number');
+           input.setAttribute('id', `2,${i},${j}`);
+           input.style.width = "35px";
+           input.style.height = "35px";
+           input.style.borderRadius = "0";
+           tr.appendChild(td);
        }
     }
     myTableDiv.appendChild(table);
-    
 }
- 
 function load() {
     
     console.log("Page load finished");
