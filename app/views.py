@@ -52,6 +52,8 @@ def add():
         for j in range(len(b[i])):
             x = int(request.form['2,{i},{j}'.format(i=i, j=j)])
             b[i][j] = x
+    print(type(a))
+    print(type(b))
     return render_template("addition.html", res = np.add(a, b))
 
 @views.route("/testing", methods = ['GET'])
