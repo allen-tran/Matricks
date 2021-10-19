@@ -216,3 +216,8 @@ input {
   align-items: center;
   display: flex;
 }
+.matrix {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
