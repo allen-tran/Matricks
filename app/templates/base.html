@@ -59,9 +59,7 @@
     </div>
   {%block action%}
 
-        <button class = "con" onclick="Javascript:addTable1(document.getElementById('dim').value,document.getElementById('dim2').value); Javascript:addTable2(document.getElementById('dim3').value,document.getElementById('dim4').value);">
-            set matrices
-      </button>
+       
     <form action="/add", method="POST">
          <div class = "firstform">
       <label for="mat1">first matricks dimension:&nbsp</label>
@@ -82,7 +80,10 @@
        minlength="1" min = "1" maxlength="3" size="1" placeholder = "0">
         </div>
         <br>
-        &nbsp
+        &nbsp 
+        <button class = "con" onclick="Javascript:addTable1(document.getElementById('dim').value,document.getElementById('dim2').value); Javascript:addTable2(document.getElementById('dim3').value,document.getElementById('dim4').value);">
+            set matrices
+      </button>
       <div id="myDynamicTable">
 
      
