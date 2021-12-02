@@ -17,7 +17,7 @@ git clone https://github.com/allen-tran/Matricks.git
 ```
 pip install -U -r requirements.txt
 ```
-3. set ```FLASK_APP``` to the proper file
+3. Set ```FLASK_APP``` to the proper file
 
 <p align="center"> Windows</p>
 
@@ -31,6 +31,6 @@ set FLASK_APP=app
 export FLASK_APP=app
 ```
 
-4. Run `app.py`
+4. Run ```app.py```
 
-Launch http://127.0.0.1:5000/ to run server
+5. Launch http://127.0.0.1:5000/ to run server
