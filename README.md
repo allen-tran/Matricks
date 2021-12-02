@@ -4,7 +4,7 @@ A linear algebra tool for students and engineers. Reduce spending time on treach
 ## Tools Used
 - Frontend: HTML + CSS + Flask
 - Backend: Python
-- Libaries: NumPy, SymPy
+- Libaries: NumPy
 
 ## Running this Repository Locally
 1. Clone this repository:
