@@ -31,6 +31,6 @@ set FLASK_APP=app
 export FLASK_APP=app
 ```
 
-4. Run ```app.py``` 🚀
+4. Run ```app.py``` 🏃‍♂️
 
-5. Launch ```http://127.0.0.1:5000/``` to run server
+5. Launch ```http://127.0.0.1:5000/``` to run server 🚀
