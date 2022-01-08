@@ -2,9 +2,10 @@
 A linear algebra tool for students and engineers, reducing time spent on treacherous, tedious work. Users can select their opertations, enter the dimensions, and set their matrices. The main goal is for users to quickly check validate their answers without any uncertainty to better understand the concepts. 
 
 ## Tech Stack 💼
-- Frontend: HTML, CSS, Flask
+- Frontend: HTML, CSS
 - Backend: Python
 - Libaries: NumPy
+- Frameworks: Flask
 
 ## Running this Repository Locally 🕹
 1. Clone this repository 👯‍♂️
